@@ -3,8 +3,9 @@
  */
 
 
-package com.phonebook.tests;
+package com.phonebook.fw;
 
+import com.phonebook.models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

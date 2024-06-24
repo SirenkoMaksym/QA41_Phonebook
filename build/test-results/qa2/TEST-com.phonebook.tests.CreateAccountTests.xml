@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.phonebook.tests.CreateAccountTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-24T09:27:12" hostname="LAPTOP-7NMLF4V4" time="2.917">
+  <properties/>
+  <testcase name="createExistedAccountNegativeTests" classname="com.phonebook.tests.CreateAccountTests" time="2.917"/>
+  <system-out><![CDATA[11:27:12.073 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test!  createExistedAccountNegativeTests with data:[]
+11:27:12.077 [Test worker] INFO  com.phonebook.utils.MyListener -- Before find Elements -->By.cssSelector: [href='/login']
+11:27:12.104 [Test worker] INFO  com.phonebook.utils.MyListener -- After find elements -->By.cssSelector: [href='/login']
+11:27:12.105 [Test worker] INFO  com.phonebook.utils.MyListener -- List size is 1
+11:27:12.108 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.cssSelector: [href='/login']
+11:27:12.203 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: email
+11:27:12.286 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: email
+11:27:12.350 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: email
+11:27:12.419 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: password
+11:27:12.475 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: password
+11:27:12.524 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: password
+11:27:12.573 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: registration
+11:27:12.644 [Test worker] INFO  com.phonebook.utils.MyListener -- Something went wrong!!!
+11:27:12.644 [Test worker] INFO  com.phonebook.utils.MyListener -- ***********************************************************
+11:27:12.645 [Test worker] INFO  com.phonebook.utils.MyListener -- Method --> alert
+11:27:12.646 [Test worker] INFO  com.phonebook.utils.MyListener -- ***********************************************************
+11:27:12.647 [Test worker] INFO  com.phonebook.utils.MyListener -- Object target --> org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator@7ad1caa2
+11:27:12.648 [Test worker] INFO  com.phonebook.utils.MyListener -- ***********************************************************
+11:27:12.649 [Test worker] INFO  com.phonebook.utils.MyListener -- Target exception org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=126.0.6478.62)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.22'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [80ee5a9a683d6716aba59a31823b4a49, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.55 (7616ff175414..., userDataDir: C:\Users\IMT-TE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62269}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62269/devtoo..., se:cdpVersion: 126.0.6478.62, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 80ee5a9a683d6716aba59a31823b4a49
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- Something went wrong!!!
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- ***********************************************************
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- Method --> alert
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- ***********************************************************
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- Object target --> org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator@3ed34ef5
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- ***********************************************************
+11:27:13.173 [Test worker] INFO  com.phonebook.utils.MyListener -- Target exception org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=126.0.6478.62)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.22'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [80ee5a9a683d6716aba59a31823b4a49, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.62, chrome: {chromedriverVersion: 126.0.6478.55 (7616ff175414..., userDataDir: C:\Users\IMT-TE~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62269}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62269/devtoo..., se:cdpVersion: 126.0.6478.62, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 80ee5a9a683d6716aba59a31823b4a49
+11:27:13.717 [Test worker] INFO  com.phonebook.utils.MyListener -- Before find Elements -->By.xpath: //div[.='Registration failed with code 409']
+11:27:13.752 [Test worker] INFO  com.phonebook.utils.MyListener -- After find elements -->By.xpath: //div[.='Registration failed with code 409']
+11:27:13.753 [Test worker] INFO  com.phonebook.utils.MyListener -- List size is 1
+11:27:13.754 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: email
+11:27:13.811 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: email
+11:27:13.872 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: password
+11:27:13.950 [Test worker] INFO  com.phonebook.utils.MyListener -- After find element --> By.name: password
+11:27:15.031 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED: createExistedAccountNegativeTests
+11:27:15.032 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test!
+11:27:15.032 [Test worker] INFO  com.phonebook.tests.TestBase -- ======================================================================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

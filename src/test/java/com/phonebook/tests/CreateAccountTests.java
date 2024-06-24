@@ -5,42 +5,51 @@
 
 package com.phonebook.tests;
 
+import com.phonebook.data.UserData;
+import com.phonebook.models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class CreateAccountTests extends TestBase {
+
+    @BeforeMethod
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutButton();
+        }
+    }
+
     @Test(enabled = false)
     public void createAccountPositiveTests() {
-        
+
         app.getUser().clickOnLoginLink();
-       
+
         app.getUser().fillRegisterLoginForm(new User()
-                .setEmail("maxtest@gmail.com")
-                .setPassword("Maxtest123!"));
+                .setEmail(UserData.EMAIL)
+                .setPassword(UserData.PASSWORD));
         app.getUser().clickOnRegistrationButton();
-        
+
         Assert.assertTrue(app.getUser().isSighOutButtonPresent());
     }
 
     @Test
     public void createExistedAccountNegativeTests() {
         SoftAssert softAssert = new SoftAssert();
-        //click on Login link
+        logger.info("Existed account data are " + UserData.EMAIL + " " + UserData.PASSWORD);
         app.getUser().clickOnLoginLink();
-        //enter email
+
         app.getUser().fillRegisterLoginForm(new User()
-                .setEmail("maxtest@gmail.com")
-                .setPassword("Maxtest123!"));
+                .setEmail(UserData.EMAIL)
+                .setPassword(UserData.PASSWORD));
         app.getUser().clickOnRegistrationButton();
-        // asser Alert is present
-        //Assert.assertTrue(isAlertPresent());
         softAssert.assertTrue(app.getUser().isAlertPresent());
 
-        //assert error messageis present
-        // Assert.assertTrue(isElementPresent(By.xpath("//div[.='Registration failed with code 409']")));
         softAssert.assertTrue(app.getUser().isError409Present());
         softAssert.assertAll();
+        app.getUser().clearLoginRegisterForm();
+        app.getUser().pause(1000);
     }
 
 }

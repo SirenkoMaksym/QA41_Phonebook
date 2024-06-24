@@ -1,38 +1,43 @@
-/*
- * created by max$
- */
-
 
 package com.phonebook.tests;
 
+import com.phonebook.data.UserData;
+import com.phonebook.models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTests extends TestBase{
-@Test
-    public void loginPositiveTest(){
-    //click on Login link
-    app.getUser().clickOnLoginLink();
-    //enter email
-    app.getUser().fillRegisterLoginForm(new User()
-            .setEmail("maxtest@gmail.com")
-            .setPassword("Maxtest123!"));
-    //click on Login button
-    app.getUser().clickOnLoginButton();
-    //assert Sign out button is present
-    //driver.findElement(By.xpath("//button[.='Sign Out']"));
-    Assert.assertTrue(app.getUser().isSighOutButtonPresent());
-}
+public class LoginTests extends TestBase {
 
-@Test
-    public void loginNegativeWithoutEmailTest(){
+    @BeforeMethod
+    public void ensurePrecondition() {
 
-    app.getUser().clickOnLoginLink();
-    app.getUser().fillRegisterLoginForm(new User()
-            .setPassword("Maxtest123!"));
-    app.getUser().clickOnLoginButton();
+        if (!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutButton();
+        }
+    }
 
-    Assert.assertTrue(app.getUser().isAlertPresent());
-}
+    @Test(priority = 1)
+    public void loginPositiveTest() {
+
+        logger.info("Login with data ---> " + UserData.EMAIL + " *** " + UserData.PASSWORD);
+
+        app.getUser().clickOnLoginLink();
+        app.getUser().fillRegisterLoginForm(new User()
+                .setEmail(UserData.EMAIL)
+                .setPassword(UserData.PASSWORD));
+        app.getUser().clickOnLoginButton();
+        Assert.assertTrue(app.getUser().isSighOutButtonPresent());
+    }
+
+    @Test(priority = 2)
+    public void loginNegativeWithoutEmailTest() {
+        app.getUser().pause(1000);
+        app.getUser().clickOnLoginLink();
+        app.getUser().fillRegisterLoginForm(new User()
+                .setPassword(UserData.PASSWORD));
+        app.getUser().clickOnLoginButton();
+        Assert.assertTrue(app.getUser().isAlertPresent());
+    }
 
 }
